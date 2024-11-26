@@ -40,3 +40,52 @@ ORDER BY date ASC
 
 
 /* Max, Min, Avg clauses */
+SELECT *, MAX(population)
+FROM covid_vaccinations_dataset
+
+SELECT *, MIN(population)
+FROM covid_vaccinations_dataset
+
+SELECT *, AVG(population)
+FROM covid_vaccinations_dataset
+
+
+/* Like clause */
+SELECT *
+FROM covid_vaccinations_dataset
+WHERE vaccine LIKE '%ok%'
+
+
+/* Joins */
+SELECT * 
+FROM covid_vaccinations_dataset
+INNER JOIN covid_deaths_dataset
+ON covid_deaths_dataset.date = covid_vaccinations_dataset.date
+
+
+/* Union, Union All clauses */
+SELECT * 
+FROM covid_vaccinations_dataset
+
+UNION ALL
+
+SELECT * 
+FROM covid_deaths_dataset
+
+
+/* Null, Not Null, IN clauses */
+SELECT *
+FROM covid_vaccinations_dataset
+WHERE population IS NULL
+
+SELECT * 
+FROM covid_vaccinations_dataset
+WHERE population IS NOT NULL
+
+Select *
+FROM covid_vaccinations_dataset
+WHERE vaccine IN ('pfizer')
+
+
+/* Case clause */
+
