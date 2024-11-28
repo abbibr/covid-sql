@@ -89,3 +89,9 @@ WHERE vaccine IN ('pfizer')
 
 /* Case clause */
 
+
+
+/* Date functions */
+SELECT * 
+FROM `covid_deaths_dataset`
+WHERE date >= CURDATE() - INTERVAL 30 DAY
